@@ -1,4 +1,4 @@
-exports class Img_Dev{
+export class Img_Dev{
 
 	constructor(
 		public _id: string,

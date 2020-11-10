@@ -1,4 +1,4 @@
-exports class Topic{
+export class Topic{
 
 	constructor(
 		public _id: string,
