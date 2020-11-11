@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 
+import { UserService } from './services/user.service';
+
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,7 +29,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     AngularFileUploaderModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

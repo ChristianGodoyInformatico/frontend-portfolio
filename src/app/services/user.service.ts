@@ -10,7 +10,9 @@ export class UserService{
 	public identity;
 	public token;
 
-	constructor(private _http: HttpClient){
+	constructor(
+		private _http: HttpClient
+	){
 		this.url = global.url;
 	}
 
@@ -63,6 +65,15 @@ export class UserService{
 		}
 
 		return this.token;
+	}
+
+	update(user): Observable<any>{
+		let params = JSON.stringify(user);
+
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+										.set('Authorization', this.getToken());
+	
+		return this._http.put(this.url+'user/update', params, {headers: headers});
 	}
 
 }
