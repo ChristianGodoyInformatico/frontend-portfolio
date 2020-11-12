@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { MomentModule } from 'angular2-moment';
 
 import { PanelModule } from './panel/panel.module';
 import { UserService } from './services/user.service';
@@ -13,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { TopicsComponent } from './components/topics/topics.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    UserEditComponent
+    UserEditComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     HttpClientModule,
     routing,
     AngularFileUploaderModule,
-    PanelModule
+    PanelModule,
+    MomentModule
   ],
   providers: [
     appRoutingProviders,

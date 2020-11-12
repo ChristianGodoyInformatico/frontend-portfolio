@@ -2,12 +2,20 @@
 	<h3>{{page_title}}</h3>
 	<hr/>
 
-	<div class="alert alert-success col-md-5 mt-3" *ngIf="status == 'success'">
+	<div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success' && !is_edit">
 		La publicacion se creo correctamente
 	</div>
 
-	<div class="alert alert-danger col-md-5 mt-3" *ngIf="status == 'error'">
+	<div class="alert alert-danger col-md-12 mt-3" *ngIf="status == 'error' && !is_edit">
 		La publicacion NO se ha podido crear
+	</div>
+
+	<div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success' && is_edit">
+		La publicacion se ha editado correctamente
+	</div>
+
+	<div class="alert alert-danger col-md-12 mt-3" *ngIf="status == 'error' && is_edit">
+		La publicacion NO se ha podido editar de forma correcta
 	</div>
 
 	<form #addTopic="ngForm" (ngSubmit)="onSubmit(addTopic)" class="mb-3">
