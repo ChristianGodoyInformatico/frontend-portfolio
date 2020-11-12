@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 
+import { PanelModule } from './panel/panel.module';
 import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     FormsModule,
     HttpClientModule,
     routing,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    PanelModule
   ],
   providers: [
     appRoutingProviders,
