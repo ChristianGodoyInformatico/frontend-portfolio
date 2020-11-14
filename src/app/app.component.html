@@ -23,9 +23,9 @@
         </li>
 
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="¿Que estas buscado?" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          <form class="form-inline my-2 my-lg-0" #searchForm="ngForm">
+          <input class="form-control mr-sm-2" type="search" placeholder="¿Que estas buscado?" aria-label="Search" name="busqueda" #busqueda="ngModel" [(ngModel)]="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="goSearch()">Buscar</button>
 
           </form>
         </li>
@@ -53,7 +53,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" [routerLink]="['/panel']">Panel de usuario</a>
-              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" [routerLink]="['/perfil', identity._id]">Mi perfil</a>
               <a class="dropdown-item" [routerLink]="['/ajustes']">Ajustes</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item pointer" (click)="logout()">Cerrar sesión</a>

@@ -1,4 +1,8 @@
-<div class="col-lg-12 mt-3">
+<div class="col-lg-12 mt-3" *ngIf="!topics">
+	<img src="/assets/img/loading.gif">
+</div>
+
+<div class="col-lg-12 mt-3" *ngIf="topics">
 	<h1>{{page_title}}</h1>
 	<hr/>
 
@@ -20,7 +24,7 @@
 	<div class="clearfix"></div>
 
 	<!-- NAVEGACION DE PAGINACION -->
-	  <ul class="pagination mt-4 mb-2">
+	  <ul class="pagination mt-4 mb-2" *ngIf="!no_paginate">
 	    <li class="page-item">
 	    	<a class="page-link" [routerLink]="['/temas', prev_page]">&laquo;</a>
 	    </li>
