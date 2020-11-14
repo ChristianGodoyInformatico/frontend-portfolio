@@ -1,0 +1,38 @@
+<div class="col-lg-12 topic-box mt-3" *ngIf="topic">
+	<div class="topic-data col-lg-7 float-left">
+		<h1>{{topic.title}}</h1>
+		<span class="badge badge-primary">
+	  			{{topic.user.name + ' ' + topic.user.surname}}
+  		</span>
+  		<span class="badge badge-light ml-2">
+  			{{topic.date | amLocale: 'es' | amTimeAgo }}
+  		</span>
+  		<p id="topic-content" class="mt-3">
+  			{{topic.content}}
+  		</p>
+	</div>
+
+	<div class="clearfix"></div>
+	
+	<div id="comment-box" class="mt-2 col-lg-9">
+		<h3>Comentarios</h3>
+		<hr/>
+
+		<form #formComment="ngForm" (ngSubmit)="onSubmit(formComment)" *ngIf="identity">
+
+			<div class="form-group">
+				<label for="content">Pon tu comentario</label>
+				<input type="text" name="content" #content="ngModel" [(ngModel)]="comment.content" required class="form-control" />
+
+				<small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">
+					El comentario no es válido
+				</small>
+			</div>
+
+			<input type="submit" value="Comentar" class="btn btn-success" [disabled]="formComment.invalid">
+			
+		</form>
+
+	</div>
+
+</div>
