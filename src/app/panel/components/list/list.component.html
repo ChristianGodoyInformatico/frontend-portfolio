@@ -1,4 +1,4 @@
-<div class="col-lg-12">
+<div class="col-lg-12" *ngIf="identity.role == 'ROLE_ADMIN'">
 	
 	<h3>{{page_title}}</h3>
 	<hr/>
@@ -18,7 +18,7 @@
 				<td>
 					<a [routerLink]="['/panel/editar', topic._id]" class="btn btn-sm btn-warning mr-2">Editar</a>
 
-					<<!-- Button to Open the Modal -->
+					<!-- Button to Open the Modal -->
 					<button type="button" class="btn btn-sm btn-danger mr-2" data-toggle="modal" [attr.data-target]="'#modal'+topic._id">
 					  Borrar
 					</button>
@@ -54,4 +54,12 @@
 		</tbody>
 	</table>
 
+</div>
+
+<div class="col-lg-12" *ngIf="identity.role != 'ROLE_ADMIN'">
+	<h3>{{page_title}}</h3>
+	<hr/>
+	<div class="clearfix mb-5"></div>
+
+	<span class="alert alert-danger">Lo lamento pero tu usuario no tiene permitido realizar publicacion en la pagina web</span>
 </div>

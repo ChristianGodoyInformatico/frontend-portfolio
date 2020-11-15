@@ -10,6 +10,7 @@ import { PanelModule } from './panel/panel.module';
 import { UserService } from './services/user.service';
 import { UserGuard } from './services/user.guard';
 import { NoIdentityGuard } from './services/no.identity.guard';
+import { UserAdmin } from './services/user.admin';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -21,6 +22,8 @@ import { TopicDetailComponent } from './components/topic-detail/topic-detail.com
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
+import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
+import { CertificateComponent } from './components/certificate/certificate.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { SearchComponent } from './components/search/search.component';
     TopicDetailComponent,
     UsersComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    InfoPersonalComponent,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { SearchComponent } from './components/search/search.component';
     appRoutingProviders,
     UserService,
     UserGuard,
-    NoIdentityGuard
+    NoIdentityGuard,
+    UserAdmin
   ],
   bootstrap: [AppComponent]
 })

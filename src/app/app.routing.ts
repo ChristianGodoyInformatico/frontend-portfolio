@@ -14,6 +14,8 @@ import { TopicDetailComponent } from './components/topic-detail/topic-detail.com
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
+import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
+import { CertificateComponent } from './components/certificate/certificate.component';
 
 // ARRAY DE RUTAS
 const appRoutes: Routes = [
@@ -28,6 +30,8 @@ const appRoutes: Routes = [
 	{path: 'usuarios', component: UsersComponent },
 	{path: 'perfil/:id', component: ProfileComponent },
 	{path: 'buscar/:search', component: SearchComponent },
+	{path: 'acerca-de-mi', component: InfoPersonalComponent },
+	{path: 'certificados', component: CertificateComponent },
 	{path: '**', component: HomeComponent }
 ];
 

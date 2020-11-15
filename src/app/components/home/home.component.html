@@ -3,16 +3,21 @@
 	<div class="jumbotron jumbotron-fluid text-center mt-5">
 	  <div class="container">
 	    <h1 class="display-4">{{page_title}}</h1>
-	    <p class="lead">Pon tus dudas, aprende y ayuda a tus compañeros desarrolladores.</p>
-	    <p>
-	    	<a class="btn btn-primary btn-lg mr-3" href="#">
+	    <h4 class="mt-4">{{page_subtitle}}</h4>
+	    <p>christiangodoyinformatico@gmail.com</p>
+	    <h5 class="text-secondary mb-4">{{page_subtitle2}}</h5>
+	    <p class="lead">
+	    	Un espacion en internet para que conozcas de manera interactiva acerca de mi persona, mis trabajos, capacidades y logros en el mundo de la informatica.
+		</p>
+	    <p class="mt-4">
+	    	<a class="btn btn-primary btn-lg mr-3" [routerLink]="['/acerca-de-mi']">
+	    		Acerca de mi
+	    	</a>
+	    	<a class="btn btn-success btn-lg mr-3" [routerLink]="['/temas']">
 	    		Ver blog
 	    	</a>
-	    	<a class="btn btn-success btn-lg mr-3" href="#">
+	    	<a class="btn btn-warning btn-lg mr-3" [routerLink]="['/usuarios']">
 	    		Ver usuarios
-	    	</a>
-	    	<a class="btn btn-warning btn-lg mr-3" href="#">
-	    		Añade contenido al blog
 	    	</a>
 	    </p>
 	  </div>

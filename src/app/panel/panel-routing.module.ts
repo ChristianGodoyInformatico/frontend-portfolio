@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from '../services/user.guard';
+import { UserAdmin } from '../services/user.admin';
 
 // COMPONENTES
 import { MainComponent } from './components/main/main.component';
@@ -16,8 +17,8 @@ const panelRoutes: Routes = [
 		children: [
 			{ path: '', component: ListComponent },
 			{ path: 'listado', component: ListComponent },
-			{ path: 'crear', component: AddComponent },
-			{ path: 'editar/:id', component: EditComponent }
+			{ path: 'crear', canActivate: [UserAdmin], component: AddComponent },
+			{ path: 'editar/:id', canActivate: [UserAdmin], component: EditComponent }
 		]
 	}
 ];

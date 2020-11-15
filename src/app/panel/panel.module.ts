@@ -15,6 +15,7 @@ import { ListComponent } from './components/list/list.component';
 // SERVICIOS
 import { UserService } from '../services/user.service';
 import { UserGuard } from '../services/user.guard';
+import { UserAdmin } from '../services/user.admin';
 
 // NgModule
 @NgModule({
@@ -39,7 +40,8 @@ import { UserGuard } from '../services/user.guard';
 	],
 	providers: [
 		UserService,
-		UserGuard
+		UserGuard,
+		UserAdmin
 	]
 })
 

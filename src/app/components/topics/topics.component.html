@@ -6,10 +6,10 @@
 	<h1>{{page_title}}</h1>
 	<hr/>
 
-	<ul class="list-group list-topics" >
-	  	<li class="list-group-item" *ngFor="let topic of topics">
+	<ul class="list-group list-group-flush list-topics opacity" >
+	  	<li class="list-group-item opacity" *ngFor="let topic of topics">
 	  		<h4>
-	  			<a [routerLink]="['/tema', topic._id]">{{topic.title}}</a>
+	  			<strong><a [routerLink]="['/tema', topic._id]">{{topic.title}}</a></strong>
 	  		</h4>
 	  		<span class="badge badge-primary">
 	  			{{topic.user.name + ' ' + topic.user.surname}}
@@ -18,13 +18,14 @@
 	  			{{topic.date | amLocale: 'es' | amTimeAgo }}
 	  		</span>
 	  		<a [routerLink]="['/tema', topic._id]" class="btn btn-sm btn-success float-right mx-auto d-block">Leer</a>
+	  		<div class="clearfix mb-3"></div>
 		</li>
 	</ul>
 
 	<div class="clearfix"></div>
 
 	<!-- NAVEGACION DE PAGINACION -->
-	  <ul class="pagination mt-4 mb-2" *ngIf="!no_paginate">
+	  <ul class="pagination mt-4 mb-2 justify-content-md-center" *ngIf="!no_paginate">
 	    <li class="page-item">
 	    	<a class="page-link" [routerLink]="['/temas', prev_page]">&laquo;</a>
 	    </li>
