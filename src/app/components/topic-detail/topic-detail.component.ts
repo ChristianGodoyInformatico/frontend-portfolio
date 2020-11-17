@@ -29,14 +29,32 @@ export class TopicDetailComponent implements OnInit {
 		private _userService: UserService,
 		private _commentService: CommentService
 	) {
-		this.identity = this._userService.getIdentity();
-		this.token = this._userService.getToken();
-		this.comment = new Comment('', '', '', this.identity._id);
+		this.token = null;
+		this.identity = null;
 		this.url = global.url;
 	}
 
 	ngOnInit(): void {
 		this.getTopic();
+		this.getIdentityAndToken();
+
+		if(this.identity != null){
+			this.generateComment();
+		}
+	}
+
+	
+	getIdentityAndToken(){
+		let identity = this._userService.getIdentity();
+		let token = this._userService.getToken();
+
+		if(identity){
+			this.identity = identity;
+			this.token = token;
+		}else{
+			this.identity = null;
+			this.token = null;
+		}
 	}
 
 	getTopic(){
@@ -58,20 +76,25 @@ export class TopicDetailComponent implements OnInit {
 		});
 	}
 
+	generateComment(){
+		this.comment = new Comment('', '', '', this.identity._id);
+	}
+
+
 	onSubmit(form){
 		this._commentService.add(this.token, this.comment, this.topic._id).subscribe(
 			response => {
 				if(!response.topic){
 					this.status = 'error';
-				}else{
-					this.status = 'success';
-					this.topic = response.topic;
-					form.reset();
-				}
+					}else{
+						this.status = 'success';
+						this.topic = response.topic;
+						form.reset();
+					}
 			},
 			error => {
-				this.status = 'error';
 				console.log(error);
+				this.status = 'error';
 			}
 		);
 	}
@@ -80,17 +103,18 @@ export class TopicDetailComponent implements OnInit {
 		this._commentService.delete(this.token, this.topic._id, id).subscribe(
 			response => {
 				if(!response.topic){
-					this.status = 'delete-error';
-				}else{
-					this.status = 'delete-success';
-					this.topic = response.topic;
-				}
+					this.status = 'error';
+					}else{
+						this.status = 'success';
+						this.topic = response.topic;
+					}
 			},
 			error => {
-				this.status = 'delete-error';
 				console.log(error);
+				this.status = 'error';
 			}
 		);
 	}
+
 
 }

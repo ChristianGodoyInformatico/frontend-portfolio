@@ -1,0 +1,33 @@
+<div class="col-lg-12 topic-box mt-3" *ngIf="dev">
+	<div class="topic-data col-lg-7 float-left">
+		<h1>{{dev.title}}</h1>
+
+  		<p id="project-content" class="mt-4 mb-4 p-3 bg-info text-white border-r">
+  			{{dev.detail}}
+  		</p>
+	</div>
+
+	<div class="clearfix"></div>
+	
+	<!--
+	<div id="images-box" class="mt-5 col-lg-10">
+
+		<hr/>
+		<ul class="list-group list-comments mb-5">
+			<li class="list-group-item" *ngFor="let image of dev.images">
+				<div class="float-left mr-3">
+		            <img src="{{url + 'image/' + image.image }}" class="img-fluid rounded w-50 " alt="Responsive image"/>
+	            </div>
+	            <div class="clearfix"></div>
+			</li>
+		</ul>
+
+	</div>
+-->
+
+
+</div>
+
+<div class="col-lg-12 topic-box mt-3" *ngIf="!dev">
+	<h2>No existe el proyecto</h2>
+</div>

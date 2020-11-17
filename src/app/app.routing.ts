@@ -3,6 +3,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserGuard } from './services/user.guard';
 import { NoIdentityGuard } from './services/no.identity.guard';
+import { UserAdmin } from './services/user.admin';
 
 // IMPORTAS COMPONENTES
 import { HomeComponent } from './components/home/home.component';
@@ -15,7 +16,10 @@ import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
-import { CertificateComponent } from './components/certificate/certificate.component';
+import { CertificatesComponent } from './components/certificates/certificates.component';
+import { CertificateDetailComponent } from './components/certificate-detail/certificate-detail.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 
 // ARRAY DE RUTAS
 const appRoutes: Routes = [
@@ -31,7 +35,10 @@ const appRoutes: Routes = [
 	{path: 'perfil/:id', component: ProfileComponent },
 	{path: 'buscar/:search', component: SearchComponent },
 	{path: 'acerca-de-mi', component: InfoPersonalComponent },
-	{path: 'certificados', component: CertificateComponent },
+	{path: 'certificados', component: CertificatesComponent },
+	{path: 'certificado/:id', component: CertificateDetailComponent },
+	{path: 'proyectos', component: ProjectsComponent },
+	{path: 'proyecto/:id', component: ProjectDetailComponent },
 	{path: '**', component: HomeComponent }
 ];
 
