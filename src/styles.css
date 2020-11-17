@@ -2,6 +2,11 @@
 	cursor: pointer;
 }
 
+.container-fluid{
+	padding-top: 0.5%;
+	padding-bottom: 32%;
+}
+
 .avatar_mask{
 	width: 40px;
 	height: 40px;
@@ -53,4 +58,12 @@
 
 .font-size-p{
 	font-size: 18px !important;
+}
+
+.info-personal{
+	margin-bottom: 0px;
+	font-size: 12px;
+	line-height : 1px;
+	color: gray;
+	font-family: italic;
 }
