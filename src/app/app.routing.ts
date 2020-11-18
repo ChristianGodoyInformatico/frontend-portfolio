@@ -14,7 +14,6 @@ import { TopicsComponent } from './components/topics/topics.component';
 import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { SearchComponent } from './components/search/search.component';
 import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { CertificateDetailComponent } from './components/certificate-detail/certificate-detail.component';
@@ -33,7 +32,6 @@ const appRoutes: Routes = [
 	{path: 'tema/:id', component: TopicDetailComponent },
 	{path: 'usuarios', component: UsersComponent },
 	{path: 'perfil/:id', component: ProfileComponent },
-	{path: 'buscar/:search', component: SearchComponent },
 	{path: 'acerca-de-mi', component: InfoPersonalComponent },
 	{path: 'certificados', component: CertificatesComponent },
 	{path: 'certificado/:id', component: CertificateDetailComponent },

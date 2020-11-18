@@ -29,12 +29,28 @@
 	height: 60px;
 }
 
+.avatar_mi_foto{
+	height: 100%;
+	border-radius: 900px;
+	overflow: hidden;
+}
+
 .img-fondo{
 	position: absolute;
 	right: 0;
 	top: 0;
 	z-index: -100;
 	opacity: 0.55;
+}
+
+.icon_about{
+	width: 15%;
+	max-width: 55px !important;
+}
+
+.icono-tec{
+	width: 8%;
+	max-width: 25px !important;
 }
 
 .border-r{
@@ -56,6 +72,14 @@
 	background: rgba(238, 226, 226, 0.5)!important;
 }
 
+.opacity2{
+	background: rgba(0, 0, 0, 0)!important;
+}
+
+.opacity3 li{
+	background: rgba(0, 0, 0, 0)!important;
+}
+
 .font-size-p{
 	font-size: 18px !important;
 }
@@ -66,4 +90,8 @@
 	line-height : 1px;
 	color: gray;
 	font-family: italic;
+}
+
+.back-image-projects{
+	background: ;
 }

@@ -23,7 +23,6 @@ import { TopicsComponent } from './components/topics/topics.component';
 import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { SearchComponent } from './components/search/search.component';
 import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
@@ -42,7 +41,6 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
     TopicDetailComponent,
     UsersComponent,
     ProfileComponent,
-    SearchComponent,
     InfoPersonalComponent,
     ProjectsComponent,
     CertificatesComponent,

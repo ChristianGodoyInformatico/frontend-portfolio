@@ -3,10 +3,12 @@
 	<hr/>
 
 	<ul class="list-group list-group-flush list-users col-md-8" >
-	  	<li class="list-group-item opacity" *ngFor="let certificate of certificates">
+	  	<li class="list-group-item opacity mb-2 rounded" *ngFor="let certificate of certificates">
 	  		<!-- IMAGEN DEL USUARIO -->
 	  		<h3>
-				{{certificate.title}}
+	  			<a class="text-info text-decoration-none" [routerLink]="['/certificado/', certificate._id]">
+					{{certificate.title}}
+				</a>
 	  		</h3>
 	  		<a [routerLink]="['/certificado/', certificate._id]" class="btn btn-sm btn-success float-left mx-auto d-block">Ver certificado</a>
 	  		<div class="clearfix mb-3"></div>

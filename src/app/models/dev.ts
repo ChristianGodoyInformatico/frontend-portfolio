@@ -4,8 +4,9 @@ export class Dev{
 		public _id: string,
 		public title: string,
 		public detail: string,
-		public date: string,
-		public images: any
+		public images: any,
+		public video: any,
+		public date: string
 	){
 
 	}
