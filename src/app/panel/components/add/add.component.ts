@@ -25,7 +25,7 @@ export class AddComponent implements OnInit {
 		private _userService: UserService,
 		private _topicService: TopicService
 	){
-		this.page_title = 'Crear nuevo tema';
+		this.page_title = 'Crear nueva publicacion';
 		this.identity = this._userService.getIdentity();
 		this.token = this._userService.getToken();
 		this.topic = new Topic('', '', '', '', this.identity._id, null);

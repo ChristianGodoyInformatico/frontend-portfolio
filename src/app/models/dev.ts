@@ -4,8 +4,8 @@ export class Dev{
 		public _id: string,
 		public title: string,
 		public detail: string,
+		public repo: string,
 		public images: any,
-		public video: any,
 		public date: string
 	){
 

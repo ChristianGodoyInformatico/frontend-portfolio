@@ -4,7 +4,11 @@
 
 .container-fluid{
 	padding-top: 0.5%;
-	padding-bottom: 32%;
+	padding-bottom: 5%;
+}
+
+.cont_web{
+	height: 100vh;
 }
 
 .avatar_mask{

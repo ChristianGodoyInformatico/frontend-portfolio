@@ -11,9 +11,6 @@
 	  		<h3>
 	  			<a class="text-info text-decoration-none" [routerLink]="['/tema', topic._id]">{{topic.title}}</a>
 	  		</h3>
-	  		<span class="badge badge-primary">
-	  			{{topic.user.name + ' ' + topic.user.surname}}
-	  		</span>
 	  		<span class="badge badge-light ml-2">
 	  			{{topic.date | amLocale: 'es' | amTimeAgo }}
 	  		</span>
@@ -25,7 +22,7 @@
 	<div class="clearfix"></div>
 
 	<!-- NAVEGACION DE PAGINACION -->
-	  <ul class="pagination mt-4 mb-2 justify-content-md-center" *ngIf="!no_paginate">
+	  <ul class="pagination mt-4 mb-3 justify-content-md-center" *ngIf="!no_paginate">
 	    <li class="page-item">
 	    	<a class="page-link" [routerLink]="['/temas', prev_page]">&laquo;</a>
 	    </li>

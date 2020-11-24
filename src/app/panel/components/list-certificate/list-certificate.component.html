@@ -12,36 +12,36 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let topic of topics">
-				<td><a class="text-dark text-decoration-none" [routerLink]="['/tema', topic._id]">{{topic.title}}</a></td>
-				<td class="text-secondary">{{topic.date | amLocale: 'es' | amDateFormat:'LL' }}</td>
+			<tr *ngFor="let cert of certificates">
+				<td><a class="text-dark text-decoration-none" [routerLink]="['/certificado', cert._id]">{{cert.title}}</a></td>
+				<td class="text-secondary">{{cert.date | amLocale: 'es' | amDateFormat:'LL' }}</td>
 				<td>
-					<a [routerLink]="['/panel/editar', topic._id]" class="btn btn-sm btn-warning mr-2">Editar</a>
+					<a [routerLink]="['/panel/editar-certificado', cert._id]" class="btn btn-sm btn-warning mr-2">Editar</a>
 
 					<!-- Button to Open the Modal -->
-					<button type="button" class="btn btn-sm btn-danger mr-2" data-toggle="modal" [attr.data-target]="'#modal'+topic._id">
+					<button type="button" class="btn btn-sm btn-danger mr-2" data-toggle="modal" [attr.data-target]="'#modal'+cert._id">
 					  Borrar
 					</button>
 
 					<!-- The Modal -->
-					<div class="modal" id="{{ 'modal'+topic._id }}">
+					<div class="modal" id="{{ 'modal'+cert._id }}">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
 
 					      <!-- Modal Header -->
 					      <div class="modal-header">
-					        <h4 class="modal-title">¿Estas seguro de querer borrar esta publicacion?</h4>
+					        <h4 class="modal-title">¿Estas seguro de querer borrar este certificado?</h4>
 					        <button type="button" class="close" data-dismiss="modal">&times;</button>
 					      </div>
 
 					      <!-- Modal body -->
 					      <div class="modal-body">
-					        Vas a borrar el tema "{{topic.title}}" de forma permante
+					        Vas a borrar el certificado "{{cert.title}}" de forma permante
 					      </div>
 
 					      <!-- Modal footer -->
 					      <div class="modal-footer">
-					        <a (click)="deleteTopic(topic._id)" class="btn btn-danger" data-dismiss="modal">Borrar</a> 
+					        <a (click)="deleteCertificate(cert._id)" class="btn btn-danger" data-dismiss="modal">Borrar</a> 
 					        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
 					      </div>
 
