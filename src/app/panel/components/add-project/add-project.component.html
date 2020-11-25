@@ -1,1 +1,54 @@
-<p>add-project works!</p>
+<div class="col-lg-10">
+	<h3>{{page_title}}</h3>
+	<hr/>
+
+	<div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success' && !is_edit">
+		El proyecto se creo correctamente
+	</div>
+
+	<div class="alert alert-danger col-md-12 mt-3" *ngIf="status == 'error' && !is_edit">
+		El proyecto NO se ha podido crear
+	</div>
+
+	<div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success' && is_edit">
+		El proyecto se ha editado correctamente
+	</div>
+
+	<div class="alert alert-danger col-md-12 mt-3" *ngIf="status == 'error' && is_edit">
+		El proyecto NO se ha podido editar de forma correcta
+	</div>
+
+	<form #addDev="ngForm" (ngSubmit)="onSubmit(addDev)" class="mb-3">
+		
+		<div class="form-group">
+			<label for="title">Titulo</label>
+			<input type="text" name="title" #title="ngModel" [(ngModel)]="dev.title" required class="form-control" />
+
+			<small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
+				El titulo no es válido
+			</small>
+		</div>
+
+		<div class="form-group">
+			<label for="detail">Descripcion</label>
+			<textarea type="text" name="detail" #detail="ngModel" [(ngModel)]="dev.detail" required class="form-control"></textarea>
+
+			<small *ngIf="!detail.valid && detail.touched" class="invalid-feedback d-block">
+				La descripcion no es válida
+			</small>
+		</div>
+
+		<div class="form-group">
+			<label for="repo">Titulo</label>
+			<input type="text" name="repo" #repo="ngModel" [(ngModel)]="dev.repo" class="form-control" />
+
+			<small *ngIf="!repo.valid" class="invalid-feedback d-block">
+				El repositorio no es válido
+			</small>
+		</div>
+
+		<input type="submit" value="Subir" class="btn btn-success" [disabled]="addDev.invalid" />
+
+	</form>
+
+</div>

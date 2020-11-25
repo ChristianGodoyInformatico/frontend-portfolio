@@ -31,9 +31,9 @@ const panelRoutes: Routes = [
 			{ path: 'editar/:id', canActivate: [UserAdmin], component: EditComponent },
 			{ path: 'crear-proyecto', canActivate: [UserAdmin], component: AddProjectComponent },
 			{ path: 'proyectos', canActivate: [UserAdmin], component: ListProjectComponent },
-			{ path: 'ediar-proyecto/:id', canActivate: [UserAdmin], component: EditProjectComponent },
+			{ path: 'editar-proyecto/:id', canActivate: [UserAdmin], component: EditProjectComponent },
 			{ path: 'crear-certificado', canActivate: [UserAdmin], component: AddCertificateComponent },
-			{ path: 'editar-certificado/id', canActivate: [UserAdmin], component: EditCertificateComponent },
+			{ path: 'editar-certificado/:id', canActivate: [UserAdmin], component: EditCertificateComponent },
 			{ path: 'certificados', canActivate: [UserAdmin], component: ListCertificateComponent }
 		]
 	}

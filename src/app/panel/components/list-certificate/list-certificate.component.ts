@@ -46,5 +46,17 @@ export class ListCertificateComponent implements OnInit {
 		);
 	}
 
+	deleteCertificate(id){
+		this._certificateService.delete(this.token, id).subscribe(
+			response => {
+				this.getCertificates();
+			},
+			error => {
+				console.log(error);
+				this.status = 'error';
+			}
+		);
+	}
+
 
 }

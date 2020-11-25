@@ -26,5 +26,20 @@ export class CertificateService{
 		return this._http.get(this.url+'certificate/'+id);
 	}
 
+	delete(token, id):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+										.set('Authorization', token);
+
+		return this._http.delete(this.url+'certificate/'+id, {headers: headers});
+	}
+
+	addCertificate(token, certificate){
+		let params = JSON.stringify(certificate);
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+										.set('Authorization', token);
+
+		return this._http.post(this.url + 'new-certificate', params, {headers: headers});
+	}
+
 
 }

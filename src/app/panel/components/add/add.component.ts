@@ -33,7 +33,7 @@ export class AddComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		console.log(this._topicService.prueba());
+		//console.log(this._topicService.prueba());
 	}
 
 	onSubmit(form){

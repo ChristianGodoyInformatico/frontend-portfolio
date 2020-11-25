@@ -12,16 +12,18 @@ import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
 
-// SERVICIOS
-import { UserService } from '../services/user.service';
-import { UserGuard } from '../services/user.guard';
-import { UserAdmin } from '../services/user.admin';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { AddCertificateComponent } from './components/add-certificate/add-certificate.component';
 import { EditCertificateComponent } from './components/edit-certificate/edit-certificate.component';
 import { ListCertificateComponent } from './components/list-certificate/list-certificate.component';
 import { ListProjectComponent } from './components/list-project/list-project.component';
+
+// SERVICIOS
+import { UserService } from '../services/user.service';
+import { UserGuard } from '../services/user.guard';
+import { UserAdmin } from '../services/user.admin';
+
 
 // NgModule
 @NgModule({

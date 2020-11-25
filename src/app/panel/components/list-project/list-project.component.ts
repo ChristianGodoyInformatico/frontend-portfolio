@@ -47,9 +47,26 @@ export class ListProjectComponent implements OnInit {
 	}
 
 	deleteDev(id){
-		this._devService.delete(this.token, id).subscribe(
+		this._devService.deleteImages(this.token, id).subscribe(
 			response => {
-				this.getDevs();
+				//console.log(response.status);
+				if(response.status == 'success'){
+
+					this._devService.delete(this.token, id).subscribe(
+						response => {
+							this.status = 'success';
+							this.getDevs();
+						},
+						error => {
+							console.log(error);
+							this.status = 'error';
+						}
+					);
+
+				}else{
+					this.status = 'error';
+				}
+
 			},
 			error => {
 				console.log(error);
